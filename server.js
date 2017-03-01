@@ -8,26 +8,29 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
 
+const textRoute = require('./server/routes/index')
+
 let app = express();
 const port = process.env.PORT || 3000;
 
 // view engine setup
-app.set('views', path.join(__dirname, 'src', 'views'));
+app.set('views', path.join(__dirname, 'client', 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'src', 'public')));
+app.use(express.static(path.join(__dirname, 'client', 'public')));
 
 let compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/src/public/index.html')
+    res.sendFile(__dirname + '/client/public/index.html')
 })
+app.use('/api', textRoute);
 
 app.listen(port, () => {
     console.log('App listen on port ' + port);

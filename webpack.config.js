@@ -6,11 +6,11 @@ module.exports = {
     entry: [
         'webpack-hot-middleware/client',
         'babel-polyfill',
-        './src/index.js'
+        './client/index.js'
     ],
     output: {
-    path: path.join(__dirname, 'src', 'public' ,'bundle'),
-    publicPath: '/src/public/',
+    path: path.join(__dirname, 'client', 'public' ,'bundle'),
+    publicPath: '/client/public/',
     filename: 'bundle.js'
   },
   module: {
@@ -19,7 +19,7 @@ module.exports = {
                 test: /\.js$/,
                 loaders: ['eslint'],
                 include: [
-                    path.resolve(__dirname,	'src'),
+                    path.resolve(__dirname,	'client'),
                 ],
             }
         ],
@@ -27,7 +27,7 @@ module.exports = {
             {
                 loaders: ['react-hot', 'babel-loader'],
                 include: [
-                    path.resolve(__dirname, 'src'),
+                    path.resolve(__dirname, 'client'),
                 ],
                 test: /\.js$/,
                 plugins: ['transform-runtime'],
