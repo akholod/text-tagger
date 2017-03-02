@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as tagsActions from '../actions/tagsActions'
+import * as tagsActions from '../actions/tagsActions';
+import * as textActions from '../actions/textActions';
 import AppHead from './AppHead';
 import Tags from './ShowTags';
+import Text from './ShowText';
 class App extends Component {
     addTag (e) {
         console.log(e.target.innerHTML);
         this.props.tagsActions.addTag('kjkj')
     }
+    componentWillMount() {
+        this.props.textActions.getStartText();
+    }
     render() {
-        console.log(this.props.text);
         return(
             <div>
                 <AppHead />
                 <Tags tags={this.props.tags}/>
-                <h1>Hello new task!! {this.props.user}</h1>
                 <button onClick={this.addTag.bind(this)}>Add tag</button>
-                {this.props.text.split(' ').map((item, i) => {
-                    return(
-                        <span key={i}>{item}</span>
-                    //     <p>
-                    //         {item.map((i) => {
-                    //             return(
-                    //                 <span >{i}</span>
-                    //             )
-                    // })}</p>
-                )
-                })}
+                <Text text={this.props.text}/>
+
             </div>
         )
     }
@@ -41,7 +35,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        tagsActions: bindActionCreators(tagsActions, dispatch)
+        tagsActions: bindActionCreators(tagsActions, dispatch),
+        textActions: bindActionCreators(textActions, dispatch)
     }
 }
 
