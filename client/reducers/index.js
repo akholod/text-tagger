@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import textReducer from './text';
-import tagsReducer from './tags';
+import text from './text';
+import tags from './tags';
 
 export default combineReducers({
-    textReducer,
-    tagsReducer
+    text,
+    tags
 })

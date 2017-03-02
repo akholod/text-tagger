@@ -28,15 +28,14 @@ class App extends Component {
                     // })}</p>
                 )
                 })}
-
             </div>
         )
     }
 }
 function mapStateToProps(state) {
     return {
-        text: state.textReducer.text,
-        tags: state.tagsReducer.tags
+        text: state.text,
+        tags: state.tags
     }
 }
 
