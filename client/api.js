@@ -6,3 +6,10 @@ export function getText() {
             return res.json()
     })
 }
+
+export function getTags() {
+    return fetch('./api/tags')
+        .then((res) => {
+            return res.json()
+    })
+}

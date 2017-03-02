@@ -8,7 +8,8 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
 
-const textRoute = require('./server/routes/index')
+const textRoute = require('./server/routes/text');
+const tagsRoute = require('./server/routes/tags');
 
 let app = express();
 const port = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/public/index.html')
 })
 app.use('/api', textRoute);
+app.use('/api', tagsRoute);
 
 app.listen(port, () => {
     console.log('App listen on port ' + port);

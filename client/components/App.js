@@ -6,6 +6,7 @@ import * as textActions from '../actions/textActions';
 import AppHead from './AppHead';
 import Tags from './ShowTags';
 import Text from './ShowText';
+
 class App extends Component {
     addTag (e) {
         console.log(e.target.innerHTML);
@@ -13,6 +14,7 @@ class App extends Component {
     }
     componentWillMount() {
         this.props.textActions.getStartText();
+        this.props.tagsActions.getStartTags();
     }
     render() {
         return(
@@ -21,7 +23,6 @@ class App extends Component {
                 <Tags tags={this.props.tags}/>
                 <button onClick={this.addTag.bind(this)}>Add tag</button>
                 <Text text={this.props.text}/>
-
             </div>
         )
     }

@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 let paragraphs = [
     `Chapter 1`,
     `When he was nearly thirteen, my brother Jem got his arm badly broken at the elbo
@@ -10,7 +10,7 @@ let paragraphs = [
 
     shorter than his right; when he stood or walked, the back of his hand was at rig
 
-    ht angles to his body, his thumb parallel to his thigh. He couldn't have cared l
+    ht angles to his body, was his thumb parallel to his thigh. He couldn't have cared l
 
     ess, so long as he could pass and punt.`,
     `When enough years had gone by to enable us to look back on them, we sometimes di
@@ -26,7 +26,7 @@ let paragraphs = [
 
     ew Jackson. If General Jackson hadn't run the Creeks up the creek, Simon Finch w
 
-    ould never have paddled up the Alabama, and where would we be if he hadn't? We w
+    ould never have paddled up the Alabama, his and where would we be if he hadn't? We w
 
     ere far too old to settle an argument with a fist-fight, so we consulted Atticus
 
