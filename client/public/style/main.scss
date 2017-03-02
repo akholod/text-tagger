@@ -1,2 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import "_global.scss";
+
+.tagged {
+    background-color: yellow
+}
+
+.show-text-component {
+    span {
+        cursor: pointer;
+        border-radius: 4px;
+        &:hover {
+            background-color: orange;
+        }
+        &:hover::after {
+            content: '+';
+            background-color: green;
+            padding: 0 5px;
+            border-radius: 4px;
+        }
+    }
+}
+
+.remove-tag-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: red;
+    padding: 0 5px 1px;
+    cursor: pointer;
+}

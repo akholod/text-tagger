@@ -30,3 +30,10 @@ export function addTag(tag) {
         tag
     }
 }
+
+export function removeTag(tag) {
+    return {
+        type: 'ADD_TAG',
+        tag
+    }
+}

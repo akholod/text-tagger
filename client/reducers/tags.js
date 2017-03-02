@@ -8,7 +8,9 @@ export default (state = initialState, action) => {
                 action.tag
             ]
         case REMOVE_TAG:
-            return state
+            return [
+                ...state.splice(state.indexOf(action.tag),1)
+            ]
         case REQUEST_TAGS_SUCCESS:
             return action.data
         case REQUEST_TAGS_FAILURE:

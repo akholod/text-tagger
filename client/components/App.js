@@ -8,21 +8,19 @@ import Tags from './ShowTags';
 import Text from './ShowText';
 
 class App extends Component {
-    addTag (e) {
-        console.log(e.target.innerHTML);
-        this.props.tagsActions.addTag('kjkj')
-    }
     componentWillMount() {
         this.props.textActions.getStartText();
         this.props.tagsActions.getStartTags();
+    }
+    removeTag(e) {
+        this.props.removeTag(e.target.tag)
     }
     render() {
         return(
             <div>
                 <AppHead />
-                <Tags tags={this.props.tags}/>
-                <button onClick={this.addTag.bind(this)}>Add tag</button>
-                <Text text={this.props.text}/>
+                <Tags tags={this.props.tags} removeTag={this.removeTag.bind(this)}/>
+                <Text text={this.props.text} tags={this.props.tags} addTag={this.props.tagsActions.addTag.bind(this)}/>
             </div>
         )
     }
