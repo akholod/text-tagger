@@ -33,7 +33,7 @@ export function addTag(tag) {
 
 export function removeTag(tag) {
     return {
-        type: 'ADD_TAG',
+        type: 'REMOVE_TAG',
         tag
     }
 }

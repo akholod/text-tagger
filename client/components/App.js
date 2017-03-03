@@ -12,15 +12,13 @@ class App extends Component {
         this.props.textActions.getStartText();
         this.props.tagsActions.getStartTags();
     }
-    removeTag(e) {
-        this.props.removeTag(e.target.tag)
-    }
     render() {
+        let { text, tags, tagsActions } = this.props;
         return(
             <div>
                 <AppHead />
-                <Tags tags={this.props.tags} removeTag={this.removeTag.bind(this)}/>
-                <Text text={this.props.text} tags={this.props.tags} addTag={this.props.tagsActions.addTag.bind(this)}/>
+                <Tags tags={tags} removeTag={tagsActions.removeTag}/>
+                <Text text={text} tags={tags} addTag={tagsActions.addTag}/>
             </div>
         )
     }

@@ -9,7 +9,8 @@ export default (state = initialState, action) => {
             ]
         case REMOVE_TAG:
             return [
-                ...state.splice(state.indexOf(action.tag),1)
+                ...state.slice(0, state.indexOf(action.tag)),
+                ...state.slice(state.indexOf(action.tag) +1, state.length)
             ]
         case REQUEST_TAGS_SUCCESS:
             return action.data
