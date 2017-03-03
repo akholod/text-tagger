@@ -30,7 +30,62 @@ let paragraphs = [
 
     ere far too old to settle an argument with a fist-fight, so we consulted Atticus
 
-    . Our father said we were both right.`
+    . Our father said we were both right.`,
+    `Being Southerners, it was a source of shame to some members of the family that w
+
+e had no recorded ancestors on either side of the Battle of Hastings. All we had
+
+was Simon Finch, a fur-trapping apothecary from Cornwall whose piety was exceed
+
+ed only by his stinginess. In England, Simon was irritated by the persecution of
+
+those who called themselves Methodists at the hands of their more liberal breth
+
+ren, and as Simon called himself a Methodist, he worked his way across the Atlan
+
+tic to Philadelphia, thence to Jamaica, thence to Mobile, and up the Saint Steph
+
+ens. Mindful of John Wesley's strictures on the use of many words in buying and
+
+selling, Simon made a pile practicing medicine, but in this pursuit he was unhap
+
+py lest he be tempted into doing what he knew was not for the glory of God, as t
+
+he putting on of gold and costly apparel. So Simon, having forgotten his teacher
+
+'s dictum on the possession of human chattels, bought three slaves and with thei
+
+r aid established a homestead on the banks of the Alabama River some forty miles
+
+above Saint Stephens. He returned to Saint Stephens only once, to find a wife,
+
+and with her established a line that ran high to daughters. Simon lived to an im
+
+pressive age and died rich.`,
+`It was customary for the men in the family to remain on Simon's homestead, Finch
+
+'s Landing, and make their living from cotton. The place was self-sufficient: mo
+
+dest in comparison with the empires around it, the Landing nevertheless produced
+
+everything required to sustain life except ice, wheat flour, and articles of cl
+
+othing, supplied by river- boats from Mobile.`,
+`Simon would have regarded with impotent fury the disturbance between the North a
+
+nd the South, as it left his descendants stripped of everything but their land,
+
+yet the tradition of living on the land remained unbroken until well into the tw
+
+entieth century, when my father, Atticus Finch, went to Montgomery to read law,
+
+and his younger brother went to Boston to study medicine. Their sister Alexandra
+
+was the Finch who remained at the Landing: she married a taciturn man who spent
+
+most of his time lying in a hammock by the river wondering if his trot-lines we
+
+re full.`
 
 ];
 router.route('/text').get((req,res) => { // get all
