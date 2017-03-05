@@ -29,7 +29,7 @@ class App extends Component {
                     addTag={tagsActions.addTag}
                     hoverTag={hoverTagActions.mouseOnTag}
                     hoveredTag={hoveredTag}
-                    saveTag={tagsActions.saveTagOnServer}
+                    addTagOnServer={tagsActions.saveTagOnServer}
                 />
             </div>
         )

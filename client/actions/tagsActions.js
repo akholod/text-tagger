@@ -7,7 +7,6 @@ export function getStartTags() {
             type: TAGS_CONST.REQUEST_TAGS
         })
         getTags().then((res) => {
-            console.log(res);
             dispatch({
                 type: TAGS_CONST.REQUEST_TAGS_SUCCESS,
                 data: res

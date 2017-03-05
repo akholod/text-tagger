@@ -5,7 +5,7 @@ export default class ShowText extends Component {
         const addedTag = e.target.innerHTML.replace(/[ \W]/g,'').toLowerCase();
         if(this.props.tags.indexOf(addedTag) === -1) {
             this.props.addTag(addedTag);
-            this.props.saveTag(addedTag);
+            this.props.addTagOnServer(addedTag);
         }
     }
     mouseOnWord(e) {
@@ -18,8 +18,11 @@ export default class ShowText extends Component {
     render() {
         let { text, tags, hoveredTag } = this.props;
         tags = tags.map(tag => tag.tagName);
+        console.log(text);
         return (
             <div className='show-text-component' onMouseLeave={this.mouseLeaveText.bind(this)}>
+                <h3>Tex document:</h3>
+                <p>Move the cursor over the word to highlight similar words. Click to save as a tag.</p>
                 {text.map((paragraph, pi) => {
                      return (<p key={pi}>{
                             paragraph.split(' ').map((word, si) => {
@@ -37,8 +40,7 @@ export default class ShowText extends Component {
                                     onClick={this.addTag.bind(this)}
                                     >
                                         { word  + ' '}
-                                    </span>
-                            )
+                                    </span>)
                         })
                     } </p>)
                 })}

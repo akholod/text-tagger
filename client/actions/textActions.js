@@ -7,10 +7,9 @@ export function getStartText() {
             type: REQUEST_TEXT
         })
         getText().then((res) => {
-            console.log(res[0]);
             dispatch({
                 type: REQUEST_TEXT_SUCCESS,
-                data: res[0].text
+                data: res
             })
         },
         (err) => {

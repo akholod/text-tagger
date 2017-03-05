@@ -2,6 +2,8 @@ import React from 'react';
 
 export default () => {
     return (
-        <h3 className='text-tagger-head'>Text tagger interface</h3>
+        <div className='app-head-component'>
+            <h1 className='text-tagger-head'>Text-tagger interface</h1>
+        </div>
     )
 }
