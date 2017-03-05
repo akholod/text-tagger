@@ -18,12 +18,18 @@ class App extends Component {
         return(
             <div>
                 <AppHead />
-                <Tags tags={tags} removeTag={tagsActions.removeTag}/>
+                <Tags
+                    tags={tags}
+                    removeTag={tagsActions.removeTag}
+                    removeTagFromServer={tagsActions.removeTagFromServer}
+                />
                 <Text
                     text={text}
                     tags={tags}
                     addTag={tagsActions.addTag}
-                    hoverTag={hoverTagActions.mouseOnTag} hoveredTag={hoveredTag}
+                    hoverTag={hoverTagActions.mouseOnTag}
+                    hoveredTag={hoveredTag}
+                    saveTag={tagsActions.saveTagOnServer}
                 />
             </div>
         )

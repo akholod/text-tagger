@@ -10,6 +10,7 @@ const config = require('./webpack.config');
 
 const textRoute = require('./server/routes/text');
 const tagsRoute = require('./server/routes/tags');
+require('./db');
 
 let app = express();
 const port = process.env.PORT || 3000;
@@ -20,7 +21,7 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client', 'public')));
 

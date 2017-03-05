@@ -5,6 +5,7 @@ export default class ShowText extends Component {
         const addedTag = e.target.innerHTML.replace(/[ \W]/g,'').toLowerCase();
         if(this.props.tags.indexOf(addedTag) === -1) {
             this.props.addTag(addedTag);
+            this.props.saveTag(addedTag);
         }
     }
     mouseOnWord(e) {
@@ -16,6 +17,7 @@ export default class ShowText extends Component {
     }
     render() {
         let { text, tags, hoveredTag } = this.props;
+        tags = tags.map(tag => tag.tagName);
         return (
             <div className='show-text-component' onMouseLeave={this.mouseLeaveText.bind(this)}>
                 {text.map((paragraph, pi) => {
