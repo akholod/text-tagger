@@ -1,22 +1,20 @@
 span {
     cursor: pointer;
-    border-radius: 3px;
     &:hover {
-        background-color: orange;
+        background-color: #e2b700;
     }
     &:hover::after {
         content: '+';
-        background-color: green;
-        padding: 0 5px 1px;
-        border-radius: 3px;
+        background-color: #6a9c24;
+        padding: 0 5px;
         position: absolute;
     }
 }
 .tagged {
-    background-color: yellow
+    background-color: #f9f141;
 }
 .hovered {
-    background-color: orange;
+    background-color:  #e2b700;
 }
 h3 {
     margin-top: 50px
