@@ -3,13 +3,17 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+//init webpack configuration
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
 
+//init app routes
 const textRoute = require('./server/routes/text');
 const tagsRoute = require('./server/routes/tags');
+
+//init database
 require('./db');
 
 let app = express();
