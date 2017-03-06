@@ -7,7 +7,7 @@ Local installation:
   
 After installation app will be served on port 3000; navigate to http://localhost:3000/
 
-### Prerequisites
-- node v.6*
+Prerequisites:
+* node v.6*
 
 Backend API - Node.js + Express.js
