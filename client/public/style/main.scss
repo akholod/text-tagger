@@ -1,34 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import "_variables.scss";
+@import "_helpers.scss";
 @import "_global.scss";
 
-.tagged {
-    background-color: yellow
+.show-tags-component {
+    @import "./components/_show-tags-component.scss"
 }
-.hovered {
-    background-color: orange;
-}
-
 .show-text-component {
-    span {
-        cursor: pointer;
-        border-radius: 3px;
-        &:hover {
-            background-color: orange;
-        }
-        &:hover::after {
-            content: '+';
-            background-color: green;
-            padding: 0 5px 1px;
-            border-radius: 3px;
-            position: absolute;
-        }
-    }
-}
-
-.remove-tag-button {
-    display: inline-block;
-    border-radius: 3px;
-    background-color: red;
-    padding: 0 5px 1px;
-    cursor: pointer;
+    @import "./components/_show-text-component.scss"
 }

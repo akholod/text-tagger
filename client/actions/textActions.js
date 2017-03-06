@@ -18,7 +18,5 @@ export function getStartText() {
                 data: new Error(err)
             })
         })
-
-
     }
 }

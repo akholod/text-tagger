@@ -15,34 +15,36 @@ export default class ShowText extends Component {
     mouseLeaveText() {
         this.props.hoverTag(null);
     }
+
     render() {
         let { text, tags, hoveredTag } = this.props;
         tags = tags.map(tag => tag.get('tagName'));
         return (
             <div className='show-text-component' onMouseLeave={this.mouseLeaveText.bind(this)}>
-                <h3>Tex document:</h3>
-                <p>Move the cursor over the word to highlight similar words. Click to save as a tag.</p>
-                {text.map((paragraph, pi) => {
-                     return (<p key={pi}>{
-                            paragraph.split(' ').map((word, si) => {
-                            return (
-                                <span
-                                    className={
-                                        (tags.indexOf(word.replace(/[ \W]/g,'').toLowerCase()) === -1)
-                                        ?
-                                        (hoveredTag === word.replace(/[ \W]/g,'').toLowerCase()) ? 'hovered' : ''
-                                        :
-                                        'tagged'
-                                    }
-                                    key={si}
-                                    onMouseEnter={this.mouseOnWord.bind(this)}
-                                    onClick={this.addTag.bind(this)}
-                                    >
-                                        { word  + ' '}
-                                    </span>)
-                        })
-                    } </p>)
-                })}
+                <h3 className='text-center'>Move the cursor over the word to highlight similar words. Click to save as a tag.</h3>
+                <div className='text'>
+                    {text.map((paragraph, pi) => {
+                         return (<p key={pi}>{
+                                paragraph.split(' ').map((word, si) => {
+                                return (
+                                    <span
+                                        className={
+                                            (tags.indexOf(word.replace(/[ \W]/g,'').toLowerCase()) === -1)
+                                            ?
+                                            (hoveredTag === word.replace(/[ \W]/g,'').toLowerCase()) ? 'hovered' : ''
+                                            :
+                                            'tagged'
+                                        }
+                                        key={si}
+                                        onMouseEnter={this.mouseOnWord.bind(this)}
+                                        onClick={this.addTag.bind(this)}
+                                        >
+                                            { word  + ' '}
+                                        </span>)
+                            })
+                        } </p>)
+                    })}
+                </div>
             </div>
         )
     }
