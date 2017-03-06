@@ -11,10 +11,10 @@ export default class ShowTags extends Component {
             <div className='show-tags-component'>
                 <h3>Existing tags</h3>
                 <ul>
-                    {this.props.tags.map((tag, index)=>{
-                        tag.index = index;
+                    {this.props.tags.map((tag, index) => {
+                        tag = tag.set('index', index);
                         return (
-                            <li key={tag._id}>{tag.tagName}
+                            <li key={tag.get('_id')}>{tag.get('tagName')}
                                 <span
                                     className='remove-tag-button'
                                     onClick={this.removeTag.bind(this, tag)}

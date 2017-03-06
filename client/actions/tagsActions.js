@@ -45,7 +45,7 @@ export function removeTagFromServer(tag) {
         dispatch({
             type: TAGS_CONST.DELETE_TAG
         })
-        deleteTag(tag).then((res) => {
+        deleteTag(tag.toJS()).then((res) => {
             dispatch({
                 type: TAGS_CONST.DELETE_TAG_SUCCESS,
                 data: res

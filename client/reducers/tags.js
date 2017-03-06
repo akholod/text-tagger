@@ -1,22 +1,21 @@
-const initialState =  [{_id: '1',tagName: ''}];
+import { List, Map } from 'immutable';
+
+const initialState =  List(Map({}));
+
 import { REQUEST_TAGS_SUCCESS, REQUEST_TAGS_FAILURE, ADD_TAG, REMOVE_TAG } from '../constants/Tags';
+
 export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_TAG:
-            return [
-                ...state,
-                {
-                    _id: Date.now().toString(),
-                    tagName: action.tag
-                }
-            ]
+            return state.push(Map({
+                _id: Date.now().toString(),
+                tagName: action.tag
+            }))
         case REMOVE_TAG:
-            return [
-                ...state.slice(0, action.tag.index),
-                ...state.slice(action.tag.index +1, state.length)
-            ]
+            return state.delete(action.tag.get('index'))
         case REQUEST_TAGS_SUCCESS:
-            return action.data
+        console.log(action.data);
+            return List(action.data.map(item => Map(item)))
         case REQUEST_TAGS_FAILURE:
             return action.data
         default:

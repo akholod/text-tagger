@@ -17,8 +17,7 @@ export default class ShowText extends Component {
     }
     render() {
         let { text, tags, hoveredTag } = this.props;
-        tags = tags.map(tag => tag.tagName);
-        console.log(text);
+        tags = tags.map(tag => tag.get('tagName'));
         return (
             <div className='show-text-component' onMouseLeave={this.mouseLeaveText.bind(this)}>
                 <h3>Tex document:</h3>
