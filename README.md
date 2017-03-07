@@ -7,6 +7,8 @@ Local installation:
   
 After installation app will be served on port 3000; navigate to http://localhost:3000/
 
+Or run the already deployed version: https://text-tag.herokuapp.com/
+
 Prerequisites:
 * Node.js >= v.6*
 
