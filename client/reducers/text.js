@@ -6,9 +6,9 @@ const initialState = List('Please, load some text!');
 export default (state = initialState, action) => {
 	switch (action.type) {
         case REQUEST_TEXT_SUCCESS:
-            return List(action.data);
+            return List(action.payload);
         case REQUEST_TEXT_FAILURE:
-            return List(action.data);
+            return List(action.payload);
         default:
             return state;
 		}

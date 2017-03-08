@@ -9,13 +9,13 @@ export function getStartText() {
         getText().then((res) => {
             dispatch({
                 type: REQUEST_TEXT_SUCCESS,
-                data: res
+                payload: res
             })
         },
         (err) => {
             dispatch({
                 type: REQUEST_TEXT_FAILURE,
-                data: new Error(err)
+                error: new Error(err)
             })
         })
     }

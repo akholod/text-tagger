@@ -9,13 +9,13 @@ export function getStartTags() {
         getTags().then((res) => {
             dispatch({
                 type: TAGS_CONST.REQUEST_TAGS_SUCCESS,
-                data: res
+                payload: res
             })
         },
         (err) => {
             dispatch({
                 type: TAGS_CONST.REQUEST_TAGS_FAILURE,
-                data: new Error(err)
+                error: new Error(err)
             })
         })
     }
@@ -29,13 +29,13 @@ export function saveTagOnServer(tag) {
         saveTag(tag).then((res) => {
             dispatch({
                 type: TAGS_CONST.SAVE_TAG_SUCCESS,
-                data: res
+                payload: res
             })
         },
         (err) => {
             dispatch({
                 type: TAGS_CONST.SAVE_TAG_FAILURE,
-                data: new Error(err)
+                error: new Error(err)
             })
         })
     }
@@ -48,13 +48,13 @@ export function removeTagFromServer(tag) {
         deleteTag(tag.toJS()).then((res) => {
             dispatch({
                 type: TAGS_CONST.DELETE_TAG_SUCCESS,
-                data: res
+                payload: res
             })
         },
         (err) => {
             dispatch({
                 type: TAGS_CONST.DELETE_TAG_FAILURE,
-                data: new Error(err)
+                error: new Error(err)
             })
         })
     }
@@ -63,13 +63,13 @@ export function removeTagFromServer(tag) {
 export function addTag(tag) {
     return {
         type: TAGS_CONST.ADD_TAG,
-        tag
+        payload: tag
     }
 }
 
 export function removeTag(tag) {
     return {
         type: TAGS_CONST.REMOVE_TAG,
-        tag
+        payload: tag
     }
 }

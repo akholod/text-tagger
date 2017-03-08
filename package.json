@@ -1,5 +1,6 @@
 {
   "name": "react-redux-text-tagger",
+  "main": "server.js",
   "version": "0.0.0",
   "private": true,
   "scripts": {

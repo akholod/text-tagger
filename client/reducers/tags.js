@@ -8,14 +8,14 @@ export default (state = initialState, action) => {
         case ADD_TAG:
             return state.push(Map({
                 _id: Date.now().toString(),
-                tagName: action.tag
+                tagName: action.payload
             }))
         case REMOVE_TAG:
-            return state.delete(action.tag.get('index'));
+            return state.delete(action.payload.get('index'));
         case REQUEST_TAGS_SUCCESS:
-            return List(action.data.map(item => Map(item)));
+            return List(action.payload.map(item => Map(item)));
         case REQUEST_TAGS_FAILURE:
-            return List(action.data.map(item => Map(item)));
+            return List(action.payload.map(item => Map(item)));
         default:
             return state;
     }
