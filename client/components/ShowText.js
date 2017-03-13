@@ -3,7 +3,9 @@
 export default class ShowText extends Component {
     addTag(e) {
         const addedTag = e.target.innerHTML.replace(/[ \W]/g,'').toLowerCase();
-        if(this.props.tags.indexOf(addedTag) === -1) {
+        const tagNames = this.props.tags.toJS().map(item => item.tagName)
+        if(tagNames.indexOf(addedTag) === -1) {
+            console.log(tagNames);
             this.props.addTag(addedTag);
             this.props.addTagOnServer(addedTag);
         }
